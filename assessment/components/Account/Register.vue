@@ -17,32 +17,32 @@
               <label class="form-label">Password</label>
               <input type="password" class="form-control form-control-lg" />
             </div>
-            <div class="form-outline mb-4">
-                <label class="form-label">Upload Photo for Profile Picture</label>
-              <el-upload
-                class="upload-demo"
-                :action="uploadUrl"
-                :on-success="handleSuccess"
-                :before-upload="beforeUpload"
-                :file-list="fileList"
-                :headers="headers"
-                :data="uploadData"
-                multiple
-                :limit="3"
-                :on-exceed="handleExceed"
-                :on-remove="handleRemove"
-                :on-preview="handlePreview"
-                :show-file-list="false"
-              >
-                <el-button size="small" type="primary">
-                  <i class="el-icon-plus"></i>
-                  Click to Upload
-                </el-button>
-                <div slot="tip" class="el-upload__tip">
-                  jpg/png files with a size less than 500kb
-                </div>
-              </el-upload>
-            </div>
+<!--            <div class="form-outline mb-4">-->
+<!--                <label class="form-label">Upload Photo for Profile Picture</label>-->
+<!--              <el-upload-->
+<!--                class="upload-demo"-->
+<!--                :action="uploadUrl"-->
+<!--                :on-success="handleSuccess"-->
+<!--                :before-upload="beforeUpload"-->
+<!--                :file-list="fileList"-->
+<!--                :headers="headers"-->
+<!--                :data="uploadData"-->
+<!--                multiple-->
+<!--                :limit="3"-->
+<!--                :on-exceed="handleExceed"-->
+<!--                :on-remove="handleRemove"-->
+<!--                :on-preview="handlePreview"-->
+<!--                :show-file-list="false"-->
+<!--              >-->
+<!--                <el-button size="small" type="primary">-->
+<!--                  <i class="el-icon-plus"></i>-->
+<!--                  Click to Upload-->
+<!--                </el-button>-->
+<!--                <div slot="tip" class="el-upload__tip">-->
+<!--                  jpg/png files with a size less than 500kb-->
+<!--                </div>-->
+<!--              </el-upload>-->
+<!--            </div>-->
 
             <div class="pt-1 mb-4">
               <button class="btn btn-info btn-lg btn-block" type="button">Register</button>
@@ -65,24 +65,24 @@ export default {
   data() {
     return {
       form: {
-        file: null,
-        type: null
+        // file: null,
+        // type: null
       },
     };
   },
   methods: {
-    handlePreview(file) {
-      console.log(file);
-    },
-    handleRemove(file, fileList) {
-      console.log(file, fileList);
-    },
-    beforeUpload(file) {
-      console.log(file);
-    },
-    handleExceed(files, fileList) {
-      console.log(files, fileList);
-    }
+    // handlePreview(file) {
+    //   console.log(file);
+    // },
+    // handleRemove(file, fileList) {
+    //   console.log(file, fileList);
+    // },
+    // beforeUpload(file) {
+    //   console.log(file);
+    // },
+    // handleExceed(files, fileList) {
+    //   console.log(files, fileList);
+    // }
   }
 }
 </script>
