@@ -14,13 +14,11 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//    return $request->user();
+//});
 
-Route::prefix('account')->group(function () {
+Route::prefix('account')->group( function() {
     Route::post('', [AuthController::class, 'register']);
-    Route::post('/login', 'AuthController@login')->middleware('auth:passport');
-    Route::post('/logout', 'AuthController@logout')->middleware('auth:api');
+    Route::post('login', [AuthController::class, 'login']);
 });
-

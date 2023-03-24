@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Laravel\Passport\Guards\TokenGuard;
+use App\Models\User;
 
 class AuthController extends Controller
 {
@@ -35,25 +37,18 @@ class AuthController extends Controller
     {
         $credentials = $request->validate([
             'email' => 'required|email',
-            'password' => 'required',
+            'password' => 'required|string',
         ]);
 
-        if (Auth::attempt($credentials)) {
-            $token = auth()->user()->createToken('auth_token')->accessToken;
+//        if (Auth::attempt($credentials)) {
+//            $token = auth()->user()->createToken('auth_token')->accessToken;
 
-            return response()->json([
-                'user' => auth()->user(),
-                'access_token' => $token,
-            ]);
-        } else {
-            return response()->json(['error' => 'Unauthenticated'], 401);
+        if (!Auth::attempt($credentials)) {
+            return response(['message' => 'Invalid login Credentials.']);
         }
-    }
+        $token = Auth::user()->createToken('authToken')->accessToken;
 
-    public function logout(Request $request)
-    {
-        $request->user()->token()->revoke();
-        return response()->json(['message' => 'Successfully logged out']);
-    }
+        return response(['user' => Auth::user(), 'access_token' => $token]);
 
+    }
 }

@@ -46,8 +46,8 @@ export default {
       laravelPassport: {
         provider: 'laravel/passport',
         url: 'http://assessment-api.local/',
-        clientId: 3,
-        clientSecret: 'rnIE9iAFF4zxiGrlZk3xLY4vuGji8PQNFY2ZTcD5',
+        clientId: 1,
+        clientSecret: 'BIZNXhuFH56FJ5es09EnMgKTkCmzD1lqL7SCKVMG',
         grantType: 'password',
       },
     },
@@ -79,6 +79,9 @@ export default {
   modules: [
     'nuxt-sweetalert2'
   ],
+  router: {
+  },
+
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

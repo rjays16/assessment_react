@@ -16,7 +16,6 @@ return [
     'defaults' => [
         'guard' => 'web',
         'passwords' => 'users',
-        'passport' => 'users',
     ],
 
     /*
@@ -41,6 +40,8 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        
     ],
 
     /*
@@ -98,11 +99,6 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
-    ],
-
-    'passport' => [
-        'provider' => 'assessment-provider',
-        'model' => App\Models\User::class,
     ],
 
     /*

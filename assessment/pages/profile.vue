@@ -126,8 +126,8 @@
       </div>
 
       <div class="col-md-6 col-lg-7 col-xl-8">
-
-        <ul class="list-unstyled">
+        <button class="btn btn-info btn-sm btn-block margin-left" type="button" @click="LogoutPage">Logout</button>
+        <ul class="list-unstyled margin">
           <li class="d-flex justify-content-between mb-4">
             <img src="/photo.jpg" alt="avatar"
                  class="rounded-circle d-flex align-self-start me-3 shadow-1-strong" width="60">
@@ -189,13 +189,34 @@
 
   </div>
 </template>
-
 <script>
 export default {
-  name: "profile"
+
+  name: "profile",
+  data() {
+    return {
+
+    }
+  },
+  methods: {
+    LogoutPage() {
+      this.$store.dispatch("auth/logout")
+      .then(res => {
+        this.$message.success("Logout Successfully")
+        this.$router.push("/");
+      }).catch(err => {
+        this.$message.error(err)
+      })
+    }
+  }
 }
 </script>
 
 <style scoped>
-
+dl, ol, ul {
+margin-top: 20px;
+}
+.btn-info{
+  float: right;
+}
 </style>

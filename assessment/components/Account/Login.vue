@@ -6,14 +6,29 @@
           <form>
             <h3 class="fw-normal mb-3 pb-3">Log in</h3>
             <div class="form-outline mb-4">
-              <input type="email" class="form-control form-control-lg" />
               <label class="form-label">Email address</label>
+              <input
+                type="email"
+                class="form-control form-control-lg"
+                v-model="form.email"
+                required
+                :class="{ 'error': !form.email }"/>
+            <transition name="fade">
+              <p v-if="!form.email" class="error-text">Email is required.</p>
+            </transition>
             </div>
             <div class="form-outline mb-4">
-              <input type="password" class="form-control form-control-lg" />
-              <label class="form-label">Password</label>
+            <label class="form-label">Password</label>
+            <input
+              type="password"
+              class="form-control form-control-lg"
+              v-model="form.password"
+              required
+              :class="{ 'error': !form.password }"/>
+            <transition name="fade">
+              <p v-if="!form.password" class="error-text">Password is required.</p>
+            </transition>
             </div>
-
             <div class="pt-1 mb-4">
               <button class="btn btn-info btn-lg btn-block" type="button" @click="LoginPage">Login</button>
             </div>
@@ -31,15 +46,45 @@
 
 <script>
 export default {
+
   name: "Login",
+  data() {
+    return {
+      form: {
+        email: null,
+        password: null,
+      }
+    }
+  },
   methods: {
     LoginPage(){
-      this.$router.push("/profile")
+      if(this.form.email !== null && this.form.password !== null) {
+        this.$store.dispatch("auth/login", this.form)
+          .then(res => {
+            this.$message.success("Successfully Login")
+            this.$router.push("/profile");
+          }).catch( err=> {
+          this.$message.error(err)
+        })
+      } else {
+        this.$message.error("Please enter field required")
+      }
     }
   }
 }
 </script>
 
 <style scoped>
-
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+.error {
+  border-color: red;
+}
+.error-text {
+  color: red;
+}
 </style>

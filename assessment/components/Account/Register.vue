@@ -102,10 +102,11 @@ export default {
   },
   methods: {
     register() {
-      if(this.form.fullname !== "" || this.form.email !== "" || this.form.password !== "") {
+      if(this.form.fullname !== null && this.form.email !== null && this.form.password !== null) {
         this.$store.dispatch("auth/register", this.form)
         .then(res => {
-          this.$message.success("Successfully Register User")
+          this.$message.success("Successfully Created")
+          this.$router.push("/");
         }).catch( err=> {
           this.$message.error(err)
         })
