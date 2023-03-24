@@ -41,6 +41,22 @@ export default {
       { src: '/dist/js/jquery.min.js', type: 'text/javascript', defer: true },
     ]
   },
+  auth: {
+    strategies: {
+      laravelPassport: {
+        provider: 'laravel/passport',
+        url: 'http://assessment-api.local/',
+        clientId: 3,
+        clientSecret: 'rnIE9iAFF4zxiGrlZk3xLY4vuGji8PQNFY2ZTcD5',
+        grantType: 'password',
+      },
+    },
+    redirect: {
+      login: '/login',
+      logout: '/login',
+      callback: false,
+    },
+  },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
@@ -61,6 +77,7 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    'nuxt-sweetalert2'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

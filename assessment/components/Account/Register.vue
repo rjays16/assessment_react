@@ -7,15 +7,41 @@
             <h3 class="fw-normal mb-3 pb-3">Register</h3>
             <div class="form-outline mb-4">
               <label class="form-label">Fullname</label>
-              <input type="text" class="form-control form-control-lg" />
+              <input
+                type="text"
+                class="form-control form-control-lg"
+                v-model="form.fullname"
+                required
+                :class="{ 'error': !form.fullname }"/>
+              <transition name="fade">
+                <p v-if="!form.fullname" class="error-text">Fullname is required.</p>
+              </transition>
             </div>
             <div class="form-outline mb-4">
               <label class="form-label">Email address</label>
-              <input type="email" class="form-control form-control-lg" />
+              <input
+                type="email"
+                class="form-control form-control-lg"
+                v-model="form.email"
+                required
+                :class="{ 'error': !form.email }"
+              />
+              <transition name="fade">
+                <p v-if="!form.email" class="error-text">Email is required.</p>
+              </transition>
             </div>
             <div class="form-outline mb-4">
               <label class="form-label">Password</label>
-              <input type="password" class="form-control form-control-lg" />
+              <input
+                type="password"
+                class="form-control form-control-lg"
+                v-model="form.password"
+                required
+                :class="{ 'error': !form.password }"
+              />
+              <transition name="fade">
+                <p v-if="!form.password" class="error-text">Password is required.</p>
+              </transition>
             </div>
 <!--            <div class="form-outline mb-4">-->
 <!--                <label class="form-label">Upload Photo for Profile Picture</label>-->
@@ -45,7 +71,7 @@
 <!--            </div>-->
 
             <div class="pt-1 mb-4">
-              <button class="btn btn-info btn-lg btn-block" type="button">Register</button>
+              <button class="btn btn-info btn-lg btn-block" type="button" @click="register">Register</button>
             </div>
             <p>Already have an account! <nuxt-link to="/" class="link-info">Login here?</nuxt-link></p>
           </form>
@@ -60,17 +86,33 @@
 </template>
 
 <script>
+import Swal from 'sweetalert2';
 export default {
   name: "Register",
   data() {
     return {
       form: {
+        fullname: null,
+        email: null,
+        password: null,
         // file: null,
         // type: null
       },
     };
   },
   methods: {
+    register() {
+      if(this.form.fullname !== "" || this.form.email !== "" || this.form.password !== "") {
+        this.$store.dispatch("auth/register", this.form)
+        .then(res => {
+          this.$message.success("Successfully Register User")
+        }).catch( err=> {
+          this.$message.error(err)
+        })
+      } else {
+        this.$message.error("Please enter field required")
+      }
+    }
     // handlePreview(file) {
     //   console.log(file);
     // },
@@ -83,10 +125,21 @@ export default {
     // handleExceed(files, fileList) {
     //   console.log(files, fileList);
     // }
-  }
+  },
 }
 </script>
 
 <style scoped>
-
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+.error {
+  border-color: red;
+}
+.error-text {
+  color: red;
+}
 </style>

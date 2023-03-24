@@ -115,6 +115,23 @@
       <excludeFolder url="file://$MODULE_DIR$/assessment-api/vendor/voku/portable-ascii" />
       <excludeFolder url="file://$MODULE_DIR$/assessment-api/vendor/phar-io/version" />
       <excludeFolder url="file://$MODULE_DIR$/assessment-api/vendor/phar-io/manifest" />
+      <excludeFolder url="file://$MODULE_DIR$/assessment-api/vendor/phpseclib/phpseclib" />
+      <excludeFolder url="file://$MODULE_DIR$/assessment-api/vendor/defuse/php-encryption" />
+      <excludeFolder url="file://$MODULE_DIR$/assessment-api/vendor/nyholm/psr7" />
+      <excludeFolder url="file://$MODULE_DIR$/assessment-api/vendor/stella-maris/clock" />
+      <excludeFolder url="file://$MODULE_DIR$/assessment-api/vendor/lcobucci/clock" />
+      <excludeFolder url="file://$MODULE_DIR$/assessment-api/vendor/lcobucci/jwt" />
+      <excludeFolder url="file://$MODULE_DIR$/assessment-api/vendor/php-http/message-factory" />
+      <excludeFolder url="file://$MODULE_DIR$/assessment-api/vendor/paragonie/constant_time_encoding" />
+      <excludeFolder url="file://$MODULE_DIR$/assessment-api/vendor/paragonie/random_compat" />
+      <excludeFolder url="file://$MODULE_DIR$/assessment-api/vendor/league/oauth2-server" />
+      <excludeFolder url="file://$MODULE_DIR$/assessment-api/vendor/league/event" />
+      <excludeFolder url="file://$MODULE_DIR$/assessment-api/vendor/league/uri-interfaces" />
+      <excludeFolder url="file://$MODULE_DIR$/assessment-api/vendor/league/uri" />
+      <excludeFolder url="file://$MODULE_DIR$/assessment-api/vendor/symfony/psr-http-message-bridge" />
+      <excludeFolder url="file://$MODULE_DIR$/assessment-api/vendor/laravel/passport" />
+      <excludeFolder url="file://$MODULE_DIR$/assessment-api/vendor/psr/clock" />
+      <excludeFolder url="file://$MODULE_DIR$/assessment-api/vendor/firebase/php-jwt" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -109,6 +109,23 @@
       <path value="$PROJECT_DIR$/assessment-api/vendor/voku/portable-ascii" />
       <path value="$PROJECT_DIR$/assessment-api/vendor/phar-io/version" />
       <path value="$PROJECT_DIR$/assessment-api/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/assessment-api/vendor/phpseclib/phpseclib" />
+      <path value="$PROJECT_DIR$/assessment-api/vendor/defuse/php-encryption" />
+      <path value="$PROJECT_DIR$/assessment-api/vendor/nyholm/psr7" />
+      <path value="$PROJECT_DIR$/assessment-api/vendor/stella-maris/clock" />
+      <path value="$PROJECT_DIR$/assessment-api/vendor/lcobucci/clock" />
+      <path value="$PROJECT_DIR$/assessment-api/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/assessment-api/vendor/php-http/message-factory" />
+      <path value="$PROJECT_DIR$/assessment-api/vendor/paragonie/constant_time_encoding" />
+      <path value="$PROJECT_DIR$/assessment-api/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/assessment-api/vendor/league/oauth2-server" />
+      <path value="$PROJECT_DIR$/assessment-api/vendor/league/event" />
+      <path value="$PROJECT_DIR$/assessment-api/vendor/league/uri-interfaces" />
+      <path value="$PROJECT_DIR$/assessment-api/vendor/league/uri" />
+      <path value="$PROJECT_DIR$/assessment-api/vendor/symfony/psr-http-message-bridge" />
+      <path value="$PROJECT_DIR$/assessment-api/vendor/laravel/passport" />
+      <path value="$PROJECT_DIR$/assessment-api/vendor/psr/clock" />
+      <path value="$PROJECT_DIR$/assessment-api/vendor/firebase/php-jwt" />
     </include_path>
   </component>
   <component name="PhpUnit">
