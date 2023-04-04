@@ -7,27 +7,11 @@
             <h3 class="fw-normal mb-3 pb-3">Log in</h3>
             <div class="form-outline mb-4">
               <label class="form-label">Email address</label>
-              <input
-                type="email"
-                class="form-control form-control-lg"
-                v-model="form.email"
-                required
-                :class="{ 'error': !form.email }"/>
-            <transition name="fade">
-              <p v-if="!form.email" class="error-text">Email is required.</p>
-            </transition>
+              <input type="email"/>
             </div>
             <div class="form-outline mb-4">
             <label class="form-label">Password</label>
-            <input
-              type="password"
-              class="form-control form-control-lg"
-              v-model="form.password"
-              required
-              :class="{ 'error': !form.password }"/>
-            <transition name="fade">
-              <p v-if="!form.password" class="error-text">Password is required.</p>
-            </transition>
+            <input type="password" class="form-control form-control-lg"/>
             </div>
             <div class="pt-1 mb-4">
               <button class="btn btn-info btn-lg btn-block" type="button" @click="LoginPage">Login</button>
