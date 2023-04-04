@@ -9,6 +9,7 @@ import {doc, arrayUnion, Timestamp, updateDoc, serverTimestamp} from "firebase/f
 import { db, storage} from "../firebase";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Picker from 'emoji-picker-react';
 
 const Input = () => {
     const [text, setText] = useState("");
@@ -17,9 +18,16 @@ const Input = () => {
     const { currentUser } = useContext(AuthContext);
     const { data } = useContext(ChatContext);
 
+    const [showPicker, setShowPicker] = useState(false);
+
+    const onEmojiClick = async (event, emojiObject) => {
+        setText(prevInput => prevInput + emojiObject.emoji);
+        setShowPicker(false);
+    }
+
     const handleSend =  async () => {
         if (img) {
-                toast(currentUser.displayName + " Send a message")
+                toast(currentUser.displayName + " Send a message with image")
             const storageRef = ref(storage, uuid());
             const uploadTask = uploadBytesResumable(storageRef, img);
 
@@ -69,9 +77,16 @@ const Input = () => {
     };
     return(
         <div className="input">
-            <input type="text" placeholder="Type something..." onChange={e=>setText(e.target.value)} value={text}/>
+            <input type="text" placeholder="Type something..." value={text} onChange={e=>setText(e.target.value)}/>
             <div className="send">
-                <img src={Attach} alt="" />
+                <img
+                    className="emoji-icon"
+                    src="https://icons.getbootstrap.com/assets/icons/emoji-smile.svg"
+                    onClick={() => setShowPicker(val => !val)} />
+                {showPicker &&
+                <Picker
+                    pickerStyle={{ width: '100%' }}
+                    onEmojiClick={(emojiObject)=> setText((prevInput)=> prevInput + emojiObject.emoji)} />}
                 <input type="file" style={{display:"none"}} id="file" onChange={e=>setImg(e.target.files[0])}/>
                 <label htmlFor="file">
                     <img src={Img} alt=""/>
