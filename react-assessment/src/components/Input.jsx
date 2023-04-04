@@ -7,6 +7,8 @@ import { v4 as uuid } from "uuid";
 import { getDownloadURL, uploadBytesResumable, ref} from "firebase/storage";
 import {doc, arrayUnion, Timestamp, updateDoc, serverTimestamp} from "firebase/firestore";
 import { db, storage} from "../firebase";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Input = () => {
     const [text, setText] = useState("");
@@ -17,6 +19,7 @@ const Input = () => {
 
     const handleSend =  async () => {
         if (img) {
+                toast(currentUser.displayName + " Send a message")
             const storageRef = ref(storage, uuid());
             const uploadTask = uploadBytesResumable(storageRef, img);
 
@@ -37,6 +40,7 @@ const Input = () => {
                     });
                 });
         } else {
+            toast(currentUser.displayName + " Send a message")
             await updateDoc(doc(db, "chats", data.chatId), {
                 messages: arrayUnion({
                     id: uuid(),
@@ -74,6 +78,7 @@ const Input = () => {
                 </label>
                 <button onClick={handleSend}>Send</button>
             </div>
+            <ToastContainer />
         </div>
     )
 }

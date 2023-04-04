@@ -1,27 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ChangeListManager">
-    <list default="true" id="e7eb5d4a-be40-4ec5-8143-68e257125b18" name="Default Changelist" comment="" />
-    <option name="SHOW_DIALOG" value="false" />
-    <option name="HIGHLIGHT_CONFLICTS" value="true" />
-    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
-    <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="ComposerSettings" doNotAsk="true">
-    <pharConfigPath>$PROJECT_DIR$/assessment-api/composer.json</pharConfigPath>
-    <execution />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JavaScript File" />
-      </list>
-    </option>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="PhpWorkspaceProjectConfiguration">
+  <component name="PhpIncludePathManager">
     <include_path>
       <path value="$PROJECT_DIR$/assessment-api/vendor/doctrine/inflector" />
       <path value="$PROJECT_DIR$/assessment-api/vendor/doctrine/lexer" />
@@ -151,68 +130,5 @@
       <path value="$PROJECT_DIR$/assessment-api/vendor/pusher/pusher-php-server" />
       <path value="$PROJECT_DIR$/assessment-api/vendor/laravel/ui" />
     </include_path>
-  </component>
-  <component name="ProjectId" id="2NQF0lW8Rn1paWXfapzSMHkZwqV" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/react-assessment" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-    <property name="vuejs.nuxt.types-notification-shown" value="true" />
-  </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
-  <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="e7eb5d4a-be40-4ec5-8143-68e257125b18" name="Default Changelist" comment="" />
-      <created>1679588182813</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1679588182813</updated>
-      <workItem from="1679588193518" duration="1372000" />
-      <workItem from="1679614163601" duration="24141000" />
-      <workItem from="1679647845821" duration="7028000" />
-      <workItem from="1679658275937" duration="618000" />
-      <workItem from="1679718507361" duration="1153000" />
-      <workItem from="1679719900411" duration="307000" />
-      <workItem from="1679725022450" duration="1051000" />
-      <workItem from="1679726148533" duration="7000" />
-      <workItem from="1679739214174" duration="1128000" />
-      <workItem from="1679741382209" duration="1297000" />
-      <workItem from="1679744826620" duration="950000" />
-      <workItem from="1679747755728" duration="561000" />
-      <workItem from="1679917840051" duration="1690000" />
-      <workItem from="1679919623246" duration="187000" />
-      <workItem from="1680524775697" duration="321000" />
-      <workItem from="1680559511726" duration="832000" />
-      <workItem from="1680560640991" duration="412000" />
-      <workItem from="1680561124519" duration="664000" />
-      <workItem from="1680563008959" duration="1685000" />
-      <workItem from="1680564808395" duration="1307000" />
-      <workItem from="1680566789913" duration="298000" />
-      <workItem from="1680567209390" duration="107000" />
-    </task>
-    <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
