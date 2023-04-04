@@ -22,3 +22,10 @@ Route::prefix('account')->group( function() {
     Route::post('', [AuthController::class, 'register']);
     Route::post('login', [AuthController::class, 'login']);
 });
+
+Route::prefix('message')->group( function() {
+    Route::get('', [App\Http\Controllers\ChatsController::class, 'index']);
+    Route::get('messages', [App\Http\Controllers\ChatsController::class, 'fetchMessages']);
+    Route::post('', [App\Http\Controllers\ChatsController::class, 'sendMessage']);
+
+});
